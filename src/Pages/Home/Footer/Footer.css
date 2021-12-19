@@ -1,0 +1,49 @@
+.footer{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    color: white;
+    background-color: rgb(3, 104, 3);
+    place-items: center;
+    padding: 2rem 0rem;
+    position: relative;
+    letter-spacing: 1px;
+}
+.footer::after{
+    position: absolute;
+    content: '';
+    height: 3px;   
+    bottom: -1px; 
+    margin: 0 auto;
+      left: 0;
+    right: 0;
+      width: 75%;
+      background: white;
+}
+
+.copyr{
+    display: grid;
+    place-items: center;
+    background-color: rgb(3, 104, 3);
+    color: white;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+
+@media only screen and (max-width: 1024px){
+    .footer{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .footer{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media only screen and (max-width: 692px){
+    .footer{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

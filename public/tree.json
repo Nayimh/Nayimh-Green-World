@@ -1,0 +1,73 @@
+[
+    {
+        "id"   : 1,
+        "name" : "Hinoki Cypress Bonsai",
+        "img"  : "https://i.ibb.co/NmVJLb7/img1.jpg",
+        "price": 1400,
+        "desc" : "This beautiful miniature Golden Gate ficus bonsai tree is actually not as difficult to take care of as one may think." 
+    },
+    {
+        "id"   : 2,
+        "name" : "Juniper Bonsai",
+        "img"  : "https://i.ibb.co/XZDpDB1/img2.jpg",
+        "price": 1100,
+        "desc" : "Junipers are one of the most popular species of trees. They are very hardy to both warmer and colder climates and can also be trained very easily with wire or pruning."
+    },
+    {
+        "id"   : 3,
+        "name" : "Chinese Elm",
+        "img"  : "https://i.ibb.co/2csf4GL/img3.jpg",
+        "price": 1700,
+        "desc" : "Chinese Elm bonsai are great for both indoor and outdoor environments. They are easy to maintain and prune. Elms are great for beginners as well as experienced enthusiasts."
+    },
+    {
+        "id"   : 4,
+        "name" : "Satsuki Azalea",
+        "img"  : "https://i.ibb.co/jTbC3kG/img4.jpg",
+        "price": 2000,
+        "desc" : "For flowering trees, the Satsuki Azalea features vibrant colors and deep green foliage. Available in a variety of colors including pink, coral, white, purple, and red."
+    },
+    {
+        "id"   : 5,
+        "name" : "Golden Gate Ficus",
+        "img"  : "https://i.ibb.co/Ht2dKfV/img5.jpg",
+        "price": 1500,
+        "desc" : "This beautiful Golden Gate ficus bonsai tree is actually not as difficult to take care of as one may think. The Golden Gate Ficus Bonsai Tree can be kept botindoors and outdoors."
+    },
+    {
+        "id"   : 6,
+        "name" : "Lavender Star",
+        "img"  : "https://i.ibb.co/CQzHCV8/img6.jpg",
+        "price": 1700,
+        "desc" : "The Grewia Occidentalis or Lavender Star tree is a tree that is named for its pink and lavender star-shaped flowers. Tree features glossy and elliptical green foliage. "
+    },
+    {
+        "id"   : 7,
+        "name" : "Miniature Flowering",
+        "img"  : "https://i.ibb.co/RQxmzN6/img7.jpg",
+        "price": 1100,
+        "desc" : "A younger version of our Flowering Tea Tree. This beautiful indoor tree also known as Fukien Tea Bonsai tree produces tiny white flowers."
+    },
+    {
+        "id"   : 8,
+        "name" : "Boxwood",
+        "img"  : "https://i.ibb.co/mNf4pNR/img8.jpg",
+        "price": 1300,
+        "desc" : "The Boxwoods tiny leathery leaves, dense growth habits and rough bark make it a good bonsai tree subject. The boxwood bonsai tree is perfect for an indoor environment."
+    },
+    {
+        "id"   : 9,
+        "name" : "Shohin Flowering Tea",
+        "img"  : "https://i.ibb.co/fqXh9kY/img9.jpg",
+        "price": 1800,
+        "desc" : "This Shohin flowering tea bonsai tree features a thick trunk in a small form, giving a feeling of strength and stability. Tea tree blooms appear throughout the year most prevalently."
+    },
+    {
+        "id"   : 10,
+        "name" : "Satsuki Azalea",
+        "img"  : "https://i.ibb.co/SRwHf7W/img10.jpg",
+        "price": 1000,
+        "desc" : "This flowering bonsai produces red blooms during the spring with the proper care. It's bold Red blooms can add a refreshing touch to a room looking for natural color."
+
+    }
+]

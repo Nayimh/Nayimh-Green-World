@@ -1,0 +1,49 @@
+.h{
+    height: 35rem;
+
+}
+
+.h:hover{
+    background-color: rgba(29, 160, 51, 0.089);
+    
+}
+
+.imag{
+    height: 15rem;
+    object-fit: cover;
+}
+
+.name{
+    color: black;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+.price{
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: black;
+    letter-spacing: 1px;
+}
+.desc{
+    letter-spacing: 1px;
+    font-weight: 400;
+    color: #000;
+}
+
+.cardBtn{
+   
+    padding: 4px 15px;
+    border: 1px solid green;
+    color: green;
+    letter-spacing: 1px;
+    font-weight: 700;
+    border-radius: 4px;
+}
+
+.cardBtn:hover{
+    background-color: green;
+    border: 1px solid black;
+    color: white;
+    transition: 0.2s  ease-in;
+}

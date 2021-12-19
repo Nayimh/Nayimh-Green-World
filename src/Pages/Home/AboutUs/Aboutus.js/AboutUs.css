@@ -1,0 +1,41 @@
+.abouth{
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: green;
+    position: relative;
+    font-weight: 700;
+}
+
+.about{
+    min-height: 88vh;
+}
+
+.abouth::after{
+    position: absolute;
+    content: '';
+    height: 3px;   
+    bottom: -10px; 
+    margin: 0 auto;
+      left: 0;
+    right: 0;
+      width: 75%;
+      background: green;
+}
+
+.abouttext{
+    letter-spacing: 8px;
+    color: green;
+    font-weight: 700;
+}
+
+.aboutm{
+    letter-spacing: 4px;
+    font-weight: 600;
+    color: rgb(22, 75, 22);
+    line-height: 2.3rem;
+}
+.aboutpera{
+    letter-spacing: 2px;
+    font-weight: 500;
+    color: rgb(9, 39, 9);
+}

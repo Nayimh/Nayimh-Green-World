@@ -1,0 +1,18 @@
+.logh{
+    color: green;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.logh::after{
+    
+        position: absolute;
+        content: '';
+        height: 3px;   
+        bottom: -10px; 
+        margin: 0 auto;
+          left: 0;
+        right: 0;
+          width: 75%;
+          background: green;
+    }
