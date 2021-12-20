@@ -1,12 +1,17 @@
 import React from 'react';
 import './Navmenu.css'
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
+import useAuth from '../../../hooks/useAuth';
 
 
 const NavMenu = () => {
+
+  const { user, logout } = useAuth();
+
+
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
   <Container>
@@ -23,9 +28,17 @@ const NavMenu = () => {
       
     </Nav>
     <Nav>
-      <Nav.Link as={HashLink} className='link' to="/login">Login</Nav.Link>
+              
       <Nav.Link >
-        Dank memes
+                {user?.email  &&
+                  <Button variant="outline-success" className='mx-3'> { user?.displayName || user?.email}</Button>  
+                }
+                
+                {user?.email ?
+                
+                <Button variant="outline-success" onClick={logout}>Logout</Button>
+                :
+      <Nav.Link as={HashLink}  to="/login"><Button variant="outline-success">LogIn</Button></Nav.Link> }
       </Nav.Link>
     </Nav>
   </Navbar.Collapse>

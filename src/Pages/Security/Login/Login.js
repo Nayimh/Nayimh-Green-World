@@ -2,11 +2,18 @@ import React, { useState } from 'react';
 import './Login.css'
 
 import img from '../../../image/banner1.jpg'
-import { Form } from 'react-bootstrap';
+import { Badge, Form, Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
+import { useLocation } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 const Login = () => {
     const [loginData, setLoginData] = useState({});
+    const { login, user, authError, isLoading, googleSignin } = useAuth();
+
+    const location = useLocation();
+    const history = useHistory();
 
     const handleOnchange = e => {
         const field = e.target.name;
@@ -19,10 +26,16 @@ const Login = () => {
 
     const handleLogin = e => {
           
+        login(loginData?.email, loginData?.password, location, history);
        
-        alert('hel')
     e.preventDefault()
-}
+    }
+    
+    const handleGoogleSignin = () => {
+        googleSignin(location, history)
+    }
+
+
 
     return (
         <div className='mt-5 pt-5'>
@@ -32,7 +45,9 @@ const Login = () => {
                     <div className='col-sm-12 col-md-6 col-lg-6 mb-5'>
                        
                             
-                            <Form  onSubmit={handleLogin}>
+                        {isLoading ? <Spinner animation="border" variant="success" />
+                            :
+                            <Form onSubmit={handleLogin}>
   <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Label>Email address</Form.Label>
     <Form.Control type="email" name='email' onChange={handleOnchange}  placeholder="Enter email" required/>
@@ -47,9 +62,15 @@ const Login = () => {
    
   </Form.Group>
   <button type="submit" className='contactBtn'>Login</button>
-                            </Form>
+                            </Form>}
+                            {
+                            user?.email && <Badge bg="success"> Successfully LoggedIn</Badge>
+                        }
+                        {
+                            authError && <Badge bg="danger">something went wrong. Please! try again!</Badge>
+                        }
                         <div className='text-center my-3 text-success shadow rounded'>-----------or-------------</div>
-                         <button className='contactBtn'>Google Signin</button> 
+                         <button className='contactBtn' onClick={handleGoogleSignin}>Google Sign In</button> 
                         
                             
                

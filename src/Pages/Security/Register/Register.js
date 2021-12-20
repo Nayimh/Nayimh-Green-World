@@ -1,9 +1,15 @@
 import React, { useState } from 'react';
-import { Form } from 'react-bootstrap';
+import { Badge, Form, Spinner } from 'react-bootstrap';
+import { useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 import img from '../../../image/banner3.jpg'
 const Register = () => {
     const [loginData, setLoginData] = useState({});
+    const { registerUser, isLoading, user, authError } = useAuth();
+    const history = useHistory();
+
+
 
     const handleChange = e => {
         const field = e.target.name;
@@ -22,8 +28,8 @@ const Register = () => {
           alert('your password did not matched');
           return;
         }
-       
-        e.preventDefault();
+        registerUser(loginData?.email, loginData?.password, loginData?.name ,history)
+          e.preventDefault();
       }
 
     return (
@@ -34,7 +40,9 @@ const Register = () => {
                     <div className='col-sm-12 col-md-6 col-lg-6 mb-5'>
               
              
-                <Form onSubmit={handleSubmit}>
+                        {isLoading ? <Spinner animation="border" variant="success" />
+                            :
+                            <Form onSubmit={handleSubmit}>
                  
 
   <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -59,8 +67,13 @@ const Register = () => {
   </Form.Group>
   
   <button type='submit' className='contactBtn'>Register</button>
-                </Form>
-             
+                </Form>}
+                        {
+                            user?.email && <Badge bg="success">user created Successfully</Badge>
+                        }
+                        {
+                            authError && <Badge bg="danger">something went wrong. Please! try again!</Badge>
+                        }
             
                         <div className='text-success shadow mt-3 rounded p-1'>
                 <h5>Already Registered? Please <Link to="/login">Login</Link> </h5>
