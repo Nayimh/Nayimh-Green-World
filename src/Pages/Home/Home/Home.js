@@ -1,5 +1,6 @@
 import React from 'react';
 import AboutUs from '../AboutUs/Aboutus.js/AboutUs';
+
 import Contactus from '../Contactus/Contactus';
 import Footer from '../Footer/Footer';
 import HomeTrees from '../HomeTree/HomeTrees/HomeTrees';
@@ -13,7 +14,8 @@ const Home = () => {
             <Banner />
             <HomeTrees />
             <AboutUs />
-            <Contactus/>
+            <Contactus />
+          
             <Footer/>
         </div>
     );

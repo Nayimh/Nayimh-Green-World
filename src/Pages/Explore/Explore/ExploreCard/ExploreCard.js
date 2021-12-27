@@ -5,6 +5,13 @@ import { Card, Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../../hooks/useAuth';
 const ExploreCard = (props) => {
+
+    useEffect(()=> {
+        Aos.init({
+            once: true,
+        })
+    });
+
     const { isLoading } = useAuth();
     const { name, img, desc, price, _id } = props.plant;
     useEffect(()=> {
@@ -12,6 +19,7 @@ const ExploreCard = (props) => {
             once: true,
         })
     });
+    
     if(isLoading) {return <Spinner animation="border" variant="success"/>}
     return (
         

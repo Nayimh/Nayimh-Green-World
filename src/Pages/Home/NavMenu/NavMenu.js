@@ -22,6 +22,7 @@ const NavMenu = () => {
     <Nav className="me-auto">
       <Link className='link' to="/home">Home</Link>
       <Link className='link' to="/explore">Explore Plants</Link>
+      <Link className='link' to="/dashboard">Dashboard</Link>
      
      
      
