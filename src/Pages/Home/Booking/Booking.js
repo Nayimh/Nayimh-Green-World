@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {  Card } from 'react-bootstrap';
+import { useHistory } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 
@@ -11,6 +12,7 @@ const Booking = () => {
 
     const { id } = useParams();
 
+    const history = useHistory();
 
 
     const [plants, setPlants] = useState([]);
@@ -47,7 +49,7 @@ const Booking = () => {
           body: JSON.stringify(ordersInfo),
         });
         alert("Order has been placed successfully");
-        
+        history.push('/dashboard')
         e.target.reset();
         e.preventDefault();
       };

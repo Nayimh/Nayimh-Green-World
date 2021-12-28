@@ -66,7 +66,7 @@ function Dashboardhome(props) {
               :
               <div>
                <Box className='container box'>
-          <Link to={`${url}/manageUserOrder`}><button className='dashbtn'>Manage Orders</button></Link>
+          <Link to={`${url}/myOrder`}><button className='dashbtn'>My Orders</button></Link>
           </Box>
               </div>}
           <Box className='container box'>
@@ -156,7 +156,7 @@ function Dashboardhome(props) {
         <Route exact path={`${path}/manageOrder`}>
           <ManageAllOrder/>
         </Route>
-        <Route exact path={`${path}/manageUserOrder`}>
+        <Route exact path={`${path}/myOrder`}>
           <ManageOrder/>
         </Route>
         <Route exact path={`${path}/addTree`}>

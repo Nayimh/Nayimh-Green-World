@@ -1,0 +1,13 @@
+.notfound{
+    display: grid;
+    place-items: center;
+    letter-spacing: 5px;
+    
+    height: 100vh;
+   
+}
+
+.notfound h1{
+    font-weight: 900;
+    color: green;
+}

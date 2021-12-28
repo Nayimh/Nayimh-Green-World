@@ -12,6 +12,7 @@ import Booking from "./Pages/Home/Booking/Booking";
 
 
 import Home from "./Pages/Home/Home/Home";
+import NotFound from "./Pages/NotFound/NotFound";
 
 import Login from "./Pages/Security/Login/Login";
 import PrivateRoute from "./Pages/Security/PrivateRoute/PrivateRoute";
@@ -45,7 +46,10 @@ function App() {
           </Route>
           <Route exact path='/register'>
             <Register/>
-          </Route>
+            </Route>
+            <Route>
+              <NotFound></NotFound>
+            </Route>
           </Switch>
       
       </Router>
