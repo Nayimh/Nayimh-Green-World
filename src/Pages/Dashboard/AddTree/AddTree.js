@@ -18,7 +18,7 @@ const AddTree = () => {
     const handleSubmit= (e) => {
       
 
-        fetch('http://localhost:5000/bonsai', {
+        fetch('https://shielded-river-66834.herokuapp.com/bonsai', {
             method: "POST",
             headers: {
                 "Content-type": "application/json"

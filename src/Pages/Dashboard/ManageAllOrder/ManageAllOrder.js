@@ -8,28 +8,26 @@ const ManageAllOrder = () => {
     const [orders, setOrders] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/order')
+        fetch('https://shielded-river-66834.herokuapp.com/order')
             .then(res => res.json())
             .then(dt => setOrders(dt))
     }, []);
     
     const handleOrderDelete = (id) => {
-        const proceed = window.confirm(
-          "Are you sure?"
-        );
-        if (proceed) {
-          const url = `http://localhost:5000/order/${id}`
-          fetch(url, {
-            method: "DELETE",
-          })
-            .then((res) => res.json())
-            .then((data) => {
-              if (data?.deletedCount) {
-                const remaining = orders?.filter((order) => order?._id !== id);
-                setOrders(remaining);
-              }
-            });
-        }
+      const proceed = window.confirm("Are you sure wanna delete this car?");
+      if (proceed) {
+        const url = `https://shielded-river-66834.herokuapp.com/order/${id}`;
+        fetch(url, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount) {
+              const remaining = orders.filter((order) => order._id !== id);
+              setOrders(remaining);
+            }
+          });
+      }
       };
 
     return (

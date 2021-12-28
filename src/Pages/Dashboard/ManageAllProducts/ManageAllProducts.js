@@ -6,7 +6,7 @@ const ManageAllProducts = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/bonsai')
+        fetch('https://shielded-river-66834.herokuapp.com/bonsai')
             .then(res => res.json())
             .then(data => setProducts(data))
     })
@@ -15,7 +15,7 @@ const ManageAllProducts = () => {
     const handleDelete = id => {
         const proceed = window.confirm("are you want to delete this Tree?");
         if (proceed) {
-            const url = `http://localhost:5000/bonsai/${id}`
+            const url = `https://shielded-river-66834.herokuapp.com/bonsai/${id}`
             fetch(url, {
                 method: "DELETE",
             })

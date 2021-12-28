@@ -9,7 +9,7 @@ const ManageOrder = () => {
     const { user } = useAuth();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/order?email=${user?.email}`)
+        fetch(`https://shielded-river-66834.herokuapp.com/order?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setOrders(data));
     }, [user?.email])
@@ -20,7 +20,7 @@ const ManageOrder = () => {
         "Are you sure?"
       );
       if (proceed) {
-        const url = `http://localhost:5000/order/${id}`;
+        const url = `https://shielded-river-66834.herokuapp.com/order/${id}`;
         fetch(url, {
           method: "DELETE",
         })

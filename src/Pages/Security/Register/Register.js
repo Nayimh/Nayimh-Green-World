@@ -48,22 +48,22 @@ const Register = () => {
 
   <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Label>Name</Form.Label>
-    <Form.Control type="text" name='name' onChange={handleChange} placeholder="Enter Name" required/>
+    <Form.Control type="text" id='nfield' name='name' onChange={handleChange} placeholder="Enter Name" required/>
     
   </Form.Group>
   <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Label>Email</Form.Label>
-    <Form.Control type="email" name='email' onChange={handleChange} placeholder="Enter Email" required/>
+    <Form.Control type="email" name='email' id='efield' onChange={handleChange} placeholder="Enter Email" required/>
     
   </Form.Group>
   <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Label>Password</Form.Label>
-    <Form.Control type="password" name='password' onChange={handleChange} placeholder="Enter Password" required/>
+    <Form.Control type="password" name='password' id='p1' onChange={handleChange} placeholder="Enter Password" required/>
     
   </Form.Group>
   <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Label>Confirm Password</Form.Label>
-    <Form.Control type="password" name='password2' onChange={handleChange} placeholder="Retype Password" required/>
+    <Form.Control type="password" name='password2' id='p2' onChange={handleChange} placeholder="Retype Password" required/>
     
   </Form.Group>
   
