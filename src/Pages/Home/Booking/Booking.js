@@ -12,13 +12,13 @@ const Booking = () => {
     
 
     useEffect(() => {
-        fetch('https://serene-gorge-52503.herokuapp.com/bonsai')
+        fetch('http://localhost:5000/bonsai')
             .then(res => res.json())
             .then(dt => setPlants(dt)) 
     }, [])
     
     useEffect(() => {
-        const foundDetails = plants.find(plant => plant._id ===                                         id);
+        const foundDetails = plants.find(plant => plant._id === id);
         setDetails(foundDetails);
     }, [id, plants])
     
@@ -27,7 +27,7 @@ const Booking = () => {
 
     const handleSubmit = e => {
        
-        fetch('https://serene-gorge-52503.herokuapp.com/order', {
+        fetch('http://localhost:5000/order', {
             // mode: 'no-cors',
             method: "POST",
             headers: {
@@ -35,7 +35,7 @@ const Booking = () => {
             },
             body: JSON.stringify(details)
         });
-        alert('s')
+        alert('successfully placed')
         e.preventDefault();
     }
 

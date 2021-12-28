@@ -29,7 +29,8 @@ const Register = () => {
           return;
         }
         registerUser(loginData?.email, loginData?.password, loginData?.name ,history)
-          e.preventDefault();
+        e.preventDefault();
+        
       }
 
     return (
@@ -47,7 +48,7 @@ const Register = () => {
 
   <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Label>Name</Form.Label>
-    <Form.Control type="text" name='text' onChange={handleChange} placeholder="Enter Name" required/>
+    <Form.Control type="text" name='name' onChange={handleChange} placeholder="Enter Name" required/>
     
   </Form.Group>
   <Form.Group className="mb-3" controlId="formBasicEmail">

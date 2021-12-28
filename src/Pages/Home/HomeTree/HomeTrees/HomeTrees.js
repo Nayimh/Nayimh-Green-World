@@ -5,7 +5,7 @@ const HomeTrees = () => {
     const [plants, setPlants] = useState([]);
 
     useEffect(() => {
-        fetch('https://serene-gorge-52503.herokuapp.com/bonsai')
+        fetch('http://localhost:5000/bonsai')
             .then(res => res.json())
             .then(data => setPlants(data))
     } ,[])

@@ -18,6 +18,8 @@ import MakdAdmin from '../MakeAdmin/MakdAdmin';
 import { Link } from 'react-router-dom';
 import ManageAllOrder from '../ManageAllOrder/ManageAllOrder';
 import useAuth from '../../../hooks/useAuth';
+import ManageAllProducts from '../ManageAllProducts/ManageAllProducts';
+import ManageOrder from '../ManageOrder/ManageOrder';
 const drawerWidth = 240;
 
 function Dashboardhome(props) {
@@ -26,6 +28,8 @@ function Dashboardhome(props) {
     const { logout } = useAuth();
     let { path, url } = useRouteMatch();
 
+    const { admin, user } = useAuth();
+
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
@@ -33,26 +37,51 @@ function Dashboardhome(props) {
   const drawer = (
     <div>
       <Toolbar />
-      <Divider />
+          <Divider />
+          <Box className='container text-success shadow-lg'> <h5>Welcome <br />{user?.displayName}</h5> </Box>
+          
+          <Divider />
           <Box className='container box'>
           <Link to="/home"><button className='dashbtn'>Home</button></Link>
           </Box>
-      <Divider />
-     
-          <Box className='container box'>
+          <Divider />
+          
+          {admin ?
+              <div>
+                  <Box className='container box'>
+          <Link to={`${url}/makeAdmin`}><button className='dashbtn'>Make Admin</button></Link>
+          </Box>
+                  <Box className='container box'>
+          <Link to={`${url}/manageAllProducts`}><button className='dashbtn'>Manage All Trees</button></Link>
+                  </Box>
+                  
+                  <Box className='container box'>
           <Link to={`${url}/addTree`}><button className='dashbtn'>Add New Tree</button></Link>
+                  </Box>
+                  <Box className='container box'>
+          <Link to={`${url}/manageOrder`}><button className='dashbtn'>Manage All Orders</button></Link>
           </Box>
-      
-          <Box className='container box'>
-          <Link to={`${url}/makeAdmin`}><button className='dashbtn'>MakeAdmin</button></Link>
+
+              </div>
+              :
+              <div>
+               <Box className='container box'>
+          <Link to={`${url}/manageUserOrder`}><button className='dashbtn'>Manage Orders</button></Link>
           </Box>
-     
-          <Box className='container box'>
-          <Link to={`${url}/manageOrder`}><button className='dashbtn'>ManageOrder</button></Link>
-          </Box>
+              </div>}
           <Box className='container box'>
           <button className='dashbtn' onClick={logout}>Logout</button>
           </Box>
+         
+      <Divider />
+     
+          
+          
+      
+          
+     
+         
+         
     
       
       
@@ -82,7 +111,7 @@ function Dashboardhome(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            WELCOME TO DASHBOARD
+            {admin ? <div> WELCOME TO Admin DASHBOARD </div>: <div>Welcome To User Dashboard</div> }
           </Typography>
         </Toolbar>
       </AppBar>
@@ -127,8 +156,14 @@ function Dashboardhome(props) {
         <Route exact path={`${path}/manageOrder`}>
           <ManageAllOrder/>
         </Route>
+        <Route exact path={`${path}/manageUserOrder`}>
+          <ManageOrder/>
+        </Route>
         <Route exact path={`${path}/addTree`}>
          <AddTree/>
+        </Route>
+        <Route exact path={`${path}/manageAllProducts`}>
+         <ManageAllProducts/>
         </Route>
         <Route exact path={`${path}/makeAdmin`}>
          <MakdAdmin/>

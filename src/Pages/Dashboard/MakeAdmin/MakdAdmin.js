@@ -1,32 +1,33 @@
-import React  from 'react';
-import { Form } from 'react-bootstrap';
+import React, { useState }  from 'react';
+import { Badge, Form } from 'react-bootstrap';
 import icon from '../../../image/admin.png'
 const MakdAdmin = () => {
-    // const [email, setEmail] = useState('');
-
+    const [email, setEmail] = useState('');
+    const [success, setSuccess] = useState(false);
     const handleEmail = e => {
     
-        console.log(e.target.value);
-        e.target.value = " ";
+        setEmail(e.target.value);
     }
 
     const handleAdmin = (e) => {
-        // const user = { email };
-        // fetch('https://serene-gorge-52503.herokuapp.com/users/admin', {
-        //     method: 'PUT',
-        //     headers: {
-        //         'content-type': 'application/json'
-        //     },
-        //     body: JSON.stringify(user)
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         if (data.modifiedCount) {
-        //             setSuccess(true);
-        //         }
-        //     })
-        // e.target.reset();
-        alert('ok');
+        
+        const user = { email };
+        fetch('http://localhost:5000/users/admin', {
+            method: 'PUT',
+            headers: {
+                'content-type': "application/json"
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount) {
+                    setSuccess(true);
+                    
+
+                }
+            })
+        e.target.reset();
         e.preventDefault();
     }
 
@@ -40,14 +41,14 @@ const MakdAdmin = () => {
                 <Form onSubmit={handleAdmin}>
   <Form.Group className="mb-3" >
     <Form.Label className='text-bold'>Make Admin</Form.Label>
-    <Form.Control type="email" name='email' onBlur={handleEmail} placeholder="Admin email" />
+    <Form.Control type="email" name='email' onChange={handleEmail} placeholder="Admin email" />
   
   </Form.Group>
   
   
-  <button type='submit' className='cardBtn'>Make Admin</button>
+  <button type='submit' className='cardBtn rounded shadow'>Make Admin</button>
                     </Form>
-                    {/* {success && <Badge bg="success">Success</Badge>} */}
+                    {success && <Badge bg="success">Success</Badge>}
                 </div>
             </div>
         </div>

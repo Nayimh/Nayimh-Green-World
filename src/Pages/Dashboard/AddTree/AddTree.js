@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Form } from 'react-bootstrap';
+import {  Form } from 'react-bootstrap';
 import img from '../../../image/banner1.jpg'
 
 const AddTree = () => {
@@ -18,14 +18,14 @@ const AddTree = () => {
     const handleSubmit= (e) => {
       
 
-        fetch('https://serene-gorge-52503.herokuapp.com/bonsai', {
+        fetch('http://localhost:5000/bonsai', {
             method: "POST",
             headers: {
                 "Content-type": "application/json"
             },
             body: JSON.stringify(addTree)
         })
-
+        alert('successfully added');
         e.target.reset();
         e.preventDefault();
     }
@@ -34,11 +34,11 @@ const AddTree = () => {
 
     return (
         <div>
-            <h1 className='heading text-center bg-success my-5 py-5'>ADD NEW PLANTS</h1>
+            <h1 className='heading text-center shadow-lg bg-success my-5 py-5'>ADD NEW PLANTS</h1>
             <div className='container'>
                 <div className='row'>
                     <div className='col-sm-12 col-md-6 col-lg-6 mb-5'>
-                        <img className='w-100 rounded shadow' src={ img } alt="" />
+                        <img className='w-100 rounded shadow-lg' src={ img } alt="" />
                     </div>
                     <div className='col-sm-12 col-md-6 col-lg-6'>
                     <Form onSubmit={handleSubmit}>
@@ -50,7 +50,7 @@ const AddTree = () => {
 
   <Form.Group className="mb-3" >
     <Form.Label>Price</Form.Label>
-    <Form.Control type="number" name="number" onChange={handleChange} placeholder="Price" required/>
+    <Form.Control type="number" name="price" onChange={handleChange} placeholder="Price" required/>
   </Form.Group>
   <Form.Group className="mb-3" >
   <Form.Label>Photo URL</Form.Label>
@@ -60,7 +60,7 @@ const AddTree = () => {
     <Form.Label>Description</Form.Label>
     <Form.Control as="textarea" onChange={handleChange} name="desc" rows={3} required/>
   </Form.Group>
-  <button type="submit" className='contactBtn'>ADD TREE</button>
+  <button type="submit" className='contactBtn shadow'>ADD TREE</button>
    
 </Form>
                     </div>
