@@ -9,7 +9,7 @@ const ManageOrder = () => {
     const { user } = useAuth();
 
     useEffect(() => {
-        fetch(`https://shielded-river-66834.herokuapp.com/order?email=${user?.email}`)
+        fetch(`https://shielded-river-66834.herokuapp.com/order/${user?.email}`)
             .then(res => res.json())
             .then(data => setOrders(data));
     }, [user?.email])
@@ -45,7 +45,7 @@ const ManageOrder = () => {
       <th> Image</th> 
       <th> Name</th> 
       <th>Price Name</th>
-      <th>Email</th>
+      <th>Manage</th>
     </tr>
       
                     </thead>
